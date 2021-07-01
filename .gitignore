@@ -1,0 +1,4 @@
+.venv
+statictester/statics/
+statictester/db.sqlite3
+__pycache__
