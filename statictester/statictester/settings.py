@@ -121,4 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = Path(__file__).parent.parent / Path("statics")
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STATICFILES_STORAGE = "myapp.storage.ManifestGoogleCloudFilesStorage"
