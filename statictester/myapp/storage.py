@@ -6,4 +6,9 @@ class ManifestGoogleCloudFilesStorage(
     storage.ManifestFilesMixin,
     gcloud.GoogleCloudStorage
 ):
-    pass
+    max_post_process_passes = 5
+
+    def get_default_settings(self):
+        settings = super().get_default_settings()
+        settings["bucket_name"] = "rh2-manifest"
+        return settings

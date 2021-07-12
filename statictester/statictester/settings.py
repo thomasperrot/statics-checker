@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from pathlib import Path
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from google.cloud import storage
+from google.oauth2 import service_account
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -122,3 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = Path(__file__).parent.parent / Path("statics")
 STATICFILES_STORAGE = "myapp.storage.ManifestGoogleCloudFilesStorage"
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+   "/home/thomas/certs/svc-rh2.json"
+)
